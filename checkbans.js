@@ -111,17 +111,16 @@ javascript:(function(){
         xmlHttp.send();
     }
 
-	var defaultkey = "5DA40A4A4699DEE30C1C9A7BCE84C914";
 	chrome.storage.sync.get("customapikey", function(data) {
 		if (typeof data['customapikey'] == 'undefined'){
-			var apikey = defaultkey;
+			//todo: error and prompt user to get their API key
 		}else{
 			var apikey = data['customapikey'];
-		}
-		var ids = Object.keys(lookup);
-		while (ids.length > 0) {
-			var batch = ids.splice(0, 100);
-			makeApiCall(batch, apikey);
+  		var ids = Object.keys(lookup);
+  		while (ids.length > 0) {
+  			var batch = ids.splice(0, 100);
+  			makeApiCall(batch, apikey);
+	  	}
 		}
 	});  
 })();

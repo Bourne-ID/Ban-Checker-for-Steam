@@ -1,5 +1,5 @@
 {
-  "name": "Ban Checker for Steam",
+  "name": "Ban Checker Extended for Steam",
   "description": "Automatically check bans of people you recently played with (or your friends)",
   "version": "0.3",
   "icons": { "16": "ow16.png",
@@ -16,5 +16,9 @@
 	"run_at": "document_end",
     "matches": [ "*://steamcommunity.com/id/*/friends*", "*://steamcommunity.com/profiles/*/friends*" ]
   }],
-  "manifest_version": 2
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "ow16.png",
+    "default_popup": "setkey.html"
+  }
 }

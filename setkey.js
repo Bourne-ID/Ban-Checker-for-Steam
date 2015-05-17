@@ -1,6 +1,6 @@
 function save_options() {
   var customapikey = document.getElementById('customapikey').value;
-  if(document.getElementById('radioCustom').checked && customapikey != '') {
+  if(document.getElementById('radioCustom').checked && customapikey !== '') {
   //use custom key
 	chrome.storage.sync.set({
 		customapikey: customapikey
@@ -12,7 +12,7 @@ function save_options() {
 			status.textContent = '';
 		}, 750);
 	});
-  }else if(document.getElementById('radioDefault').checked || customapikey == '') {
+  }else if(document.getElementById('radioDefault').checked || customapikey === '') {
   //use default key
 	chrome.storage.sync.remove('customapikey', function() {
 		var status = document.getElementById('status');
