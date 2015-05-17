@@ -27,6 +27,9 @@ function save_options() {
 }
 
 function restore_options() {
+	document.getElementById('save').addEventListener('click',
+    save_options);
+	
 	chrome.storage.sync.get("customapikey", function(data) {
 		if (typeof data['customapikey'] == 'undefined'){
 			
@@ -38,5 +41,4 @@ function restore_options() {
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
-    save_options);
+

@@ -12,7 +12,7 @@
     "page": "setkey.html",
     "chrome_style": true },
   "content_scripts": [ {
-    "js": [ "checkbans.min.js" ],
+    "js": [ "checkbans.js" ],
 	"run_at": "document_end",
     "matches": [ "*://steamcommunity.com/id/*/friends*", "*://steamcommunity.com/profiles/*/friends*" ]
   }],

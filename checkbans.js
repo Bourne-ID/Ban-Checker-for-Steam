@@ -1,3 +1,13 @@
+// chrome.runtime.onInstalled.addListener(function(details){
+//     if(details.reason == "install"){
+//         chrome.runtime.openOptionsPage();
+//     }else if(details.reason == "update"){
+//         var thisVersion = chrome.runtime.getManifest().version;
+//         console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
+//     }
+// });
+
+
 javascript:(function(){
     // Javascript does not work well with integers greater than 53 bits precision... So we need
     // to do our maths using strings.
@@ -112,10 +122,10 @@ javascript:(function(){
     }
 
 	chrome.storage.sync.get("customapikey", function(data) {
-		if (typeof data['customapikey'] == 'undefined'){
+		if (typeof data['customapikey'] == 'undefined') {
 			//todo: error and prompt user to get their API key
-		}else{
-			var apikey = data['customapikey'];
+		} else {
+		  var apikey = data['customapikey'];
   		var ids = Object.keys(lookup);
   		while (ids.length > 0) {
   			var batch = ids.splice(0, 100);
