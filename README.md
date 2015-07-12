@@ -11,7 +11,7 @@ Script works on pages with URIs that follow such patterns:
 Remove all reference to API keys and using Google App Cloud for calls, therefore hiding all keys but keeping the 'click and go' usability available.
 
 ## Privacy Policy
-Data submitted using this app will be sent to a Google Cloud Application for fast cache returns and ease of use. Please see the [Cloud App Privacy Policy](https://github.com/Bourne-ID/Steam-Ban-Cloud-Check/blob/master/README.md) for information on data stored in the cloud.
+Data submitted using this app will be sent to a Google Cloud Application for fast cache returns and ease of use. Please see the [Steam-Ban-Cloud-Check Privacy Policy](https://github.com/Bourne-ID/Steam-Ban-Cloud-Check/blob/master/README.md) for information on data stored in the cloud.
 
 **No data is stored in the Chrome Extension**
 
