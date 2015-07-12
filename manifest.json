@@ -6,7 +6,7 @@
 			"48": "ow48.png",
 			"128": "ow128.png" },
   "permissions": [
-    "storage", "*://steamcommunity.com/*", "https://api.steampowered.com/*"
+    "storage", "*://steamcommunity.com/*", "https://api.steampowered.com/*", "https://thermal-scene-99714.appspot.com/"
   ],
   "options_ui": {
     "page": "setkey.html",

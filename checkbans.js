@@ -1,3 +1,5 @@
+//http://stackoverflow.com/questions/2399389/detect-chrome-extension-first-run-update
+
 // chrome.runtime.onInstalled.addListener(function(details){
 //     if(details.reason == "install"){
 //         chrome.runtime.openOptionsPage();
@@ -67,7 +69,7 @@ javascript:(function(){
     });
 
     function setVacation(player) {
-        var friendElements = lookup[player.SteamId];
+        var friendElements = lookup[player.SteamID];
 
         friendElements.forEach(function(friend) {
             var inGameText = friend.querySelector('.linkFriend_in-game');
@@ -106,31 +108,24 @@ javascript:(function(){
     function onData(xmlHttp) {
         if (xmlHttp.readyState === XMLHttpRequest.DONE && xmlHttp.status === 200) {
             var data = JSON.parse(xmlHttp.responseText);
-            data.players.forEach(setVacation);
+            data.forEach(setVacation);
         }
     }
 
-    function makeApiCall(ids, apikey) {
+    function makeApiCall(ids) {
         var xmlHttp = new XMLHttpRequest();
-        //API only allows 100 steam ids at once.
-        var endpointRoot = 'https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key='+apikey+'&steamids=';
-        var endpoint = endpointRoot + ids.join(',');
-
+        var endpoint = 'https://thermal-scene-99714.appspot.com';
+        var params = "steamids=" + ids.join(',');
+        
         xmlHttp.onreadystatechange = function() { onData(xmlHttp); };
-        xmlHttp.open('GET', endpoint, true);
-        xmlHttp.send();
+        xmlHttp.open('POST', endpoint, true);
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send(params);
     }
 
-	chrome.storage.sync.get("customapikey", function(data) {
-		if (typeof data['customapikey'] == 'undefined') {
-			//todo: error and prompt user to get their API key
-		} else {
-		  var apikey = data['customapikey'];
-  		var ids = Object.keys(lookup);
-  		while (ids.length > 0) {
-  			var batch = ids.splice(0, 100);
-  			makeApiCall(batch, apikey);
-	  	}
-		}
-	});  
+  	var ids = Object.keys(lookup);
+  	makeApiCall(ids);
+	  	
+		
+	  
 })();
