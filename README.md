@@ -8,7 +8,13 @@ Script works on pages with URIs that follow such patterns:
 - \*://steamcommunity.com/id/\*/friends\*
 - \*://steamcommunity.com/profiles/\*/friends\*
 
-Forced API Key to your own in extension's options rather than a standard, as per Steams Developmoent terms of use (API keys should be secret, therefore use your own!).
+Remove all reference to API keys and using Google App Cloud for calls, therefore hiding all keys but keeping the 'click and go' usability available.
+
+## Privicy Policy
+Data submitted using this app will be sent to a Google Cloud Application for fast cache returns and ease of use. Please see the [Cloud App Privacy Policy](https://github.com/Bourne-ID/Steam-Ban-Cloud-Check/blob/master/README.md) for information on data stored in the cloud.
+
+**No data is stored in the Chrome Extension**
+
 
 # Credits
 - [walk3](http://www.reddit.com/user/walk3) - original [Ban Checker for Steam Chome Extension](https://github.com/ge-ku/Ban-Checker-for-Steam) creator
